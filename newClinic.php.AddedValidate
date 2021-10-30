@@ -1,0 +1,129 @@
+<?php
+// Index.php
+// Nik Rubenstein -- 12-05-2014
+$SECURE = TRUE;
+require_once("inc/init.php");
+?>
+<!doctype HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+
+<script>
+jQuery(function($){
+ //  $("#date").mask("99/99/9999",{placeholder:"mm/dd/yyyy"});
+   $("#phone1").mask("(999) 999-9999");
+   $("#phone2").mask("(999) 999-9999");
+   $("#fax").mask("(999) 999-9999");
+//   $("#tin").mask("99-9999999");
+//   $("#ssn").mask("999-99-9999");
+});
+</script>
+
+<title> Itasca</title>
+<?php
+require("{$legos}/head.php");
+?>
+
+<body>
+<?php
+require("{$legos}/banner.php");
+require("{$legos}/messages.php");
+require("{$legos}/nav.php");
+?>
+
+<div class = 'siteWrap'>
+
+
+	<div class = 'aptForm'>
+		<div class = 'formTitle'>
+		New Clinic
+		</div>
+	
+	
+	<?php
+	
+	formForm("{$htmlRoot}/proc/newClinic.php",'post','onsubmit="return validateForm();"');
+	
+	
+	if($uInfo['role'] == 1 || $uInfo['role'] == 2){ // if they are admin or Itasca staff
+		// make a dropdown of clinics
+		formLabel('clinic','For Facility');
+		echo "<oneDrop>";
+		formDropdown('clinicID','facilities','id','title','Choose A Facility');
+		echo "</oneDrop>";
+	} else {
+		echo "<input type = 'hidden' name = 'clinicID' value = '{$uInfo['facility']}'>";
+	
+	}
+	clearfix();
+	hr();
+	// Facility info
+	formLabel('hqTitle','Clinic Title');
+	formInput('facTitle','text','');
+	clearfix();
+	
+	// HQ address
+	formLabel('adr1','Address 1');
+	formInput('adr1','text','');
+	clearfix();
+	formLabel('adr2','Address 2');
+	formInput('adr2','text','');
+	clearfix();
+	formLabel('adrCity','City');
+	formInput('adrCity','text','');
+	clearfix();
+	formLabel('adrState','State');
+	//formInput('adrState','text','');
+	echo "<oneDrop>";
+	echo "<select name = 'adrState'>";
+	require("{$legos}/stateDrop.php");
+	echo "</select>";
+	echo "</oneDrop>";
+	clearfix();
+	formLabel('adrZip','Zip Code');
+	formInput('adrZip','text','');
+	// email
+	clearfix();
+	formLabel('email','Email');
+	formInput('email','text','');
+	//HQ phone numbers
+	clearfix();
+	formLabel('phone1','Telephone 1');
+	formInput('phone1','text','','id="phone1"');
+	clearfix();
+	formLabel('phone2','Telephone 2');
+	formInput('phone2','text','','id="phone2"');
+	clearfix();
+	formLabel('fax','Fax Number');
+	formInput('fax','text','','id="fax"');
+	clearfix();
+	
+	
+	//submit
+	formLabel('blank','');
+	formInput('submit','submit','Submit');
+	//time
+	
+	clearfix();
+?>
+
+
+	</div> <!-- aptForm -->
+	
+	<?php
+//	print_r($uInfo);
+	?>
+</div> <!-- siteWrap -->
+
+
+<?php
+require("scripts.php");
+?>
+
+
+</body>
+</html>
+
+

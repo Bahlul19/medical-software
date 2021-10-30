@@ -1,0 +1,7 @@
+[30-Mar-2018 05:37:41] PHP Fatal error:  Can't use function return value in write context in /home/itasca11/dev.itascainterpreter.biz/portal/proc/ajaxRequests/getAppointmentDetailsById.php on line 50
+[30-Mar-2018 05:38:03] PHP Fatal error:  Can't use function return value in write context in /home/itasca11/dev.itascainterpreter.biz/portal/proc/ajaxRequests/getAppointmentDetailsById.php on line 50
+[30-Mar-2018 05:38:42] PHP Fatal error:  Can't use function return value in write context in /home/itasca11/dev.itascainterpreter.biz/portal/proc/ajaxRequests/getAppointmentDetailsById.php on line 50
+[30-Mar-2018 05:41:24] PHP Parse error:  syntax error, unexpected T_STRING in /home/itasca11/dev.itascainterpreter.biz/portal/proc/ajaxRequests/getAppointmentDetailsById.php on line 24
+[30-Mar-2018 05:41:42] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home/itasca11/dev.itascainterpreter.biz/portal/proc/ajaxRequests/getAppointmentDetailsById.php on line 25
+[30-Mar-2018 05:41:42] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/itasca11/dev.itascainterpreter.biz/portal/proc/ajaxRequests/getAppointmentDetailsById.php on line 25
+[30-Mar-2018 06:01:46] PHP Parse error:  syntax error, unexpected T_STRING in /home/itasca11/dev.itascainterpreter.biz/portal/proc/ajaxRequests/getAppointmentDetailsById.php on line 24

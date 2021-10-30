@@ -1,0 +1,6 @@
+<?php
+// head.php
+// Nik Rubenstein -- 11-26-2014
+// Head info to be included in every doc
+echo "<link rel='stylesheet' type='text/css' href='{$htmlRoot}/css/main.css'>";
+?>
